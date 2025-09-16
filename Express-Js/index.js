@@ -39,7 +39,19 @@ app.post("/", (req, res) => {
   res.send("You contacted root path");
 });
 
-//For all undefined path
-app.use((req, res) => {
-  res.status(404).send("This path does not exist");
+//For all undefined path (e hamesha sare path ke niche hota hai)
+// app.use((req, res) => {
+//   res.status(404).send("This path does not exist");
+// });
+
+//Path parameters
+app.get("/:username", (req, res) => {
+  console.log(req.params);
+  res.send("Username response");
+});
+
+app.get("/:username/:id", (req, res) => {
+  let { username, id } = req.params; //object destruture
+  console.log(req.params); //http://localhost:3000/niraj/123
+  res.send(`${username} with ${id} response`);
 });
