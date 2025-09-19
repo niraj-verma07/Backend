@@ -2,13 +2,21 @@ const express = require("express");
 const app = express();
 const port = 3000;
 
+//Parshing Data
+app.use(express.urlencoded({ extended: true }));
+
+//Parsing json data
+app.use(express.json());
+
 app.get("/register", (req, res) => {
   let { user, password } = req.query;
-  res.send(`Standard GET response. Welcome ${user}`);
+  res.send(`Standard GET response. Welcome ${user}!`);
 });
 
 app.post("/register", (req, res) => {
-  res.send("Standard POST response");
+  console.log(req.body);
+  let { user, password } = req.body;
+  res.send(`Standard POST response. Welcome ${user}!`);
 });
 
 app.listen(port, () => {
