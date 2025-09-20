@@ -53,7 +53,7 @@ class Person {
   }
 }
 
-let per1 = new Person("Niraj", 20);
+// let per1 = new Person("Niraj", 20);
 
 //Inheritance
 
