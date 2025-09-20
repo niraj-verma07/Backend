@@ -59,7 +59,7 @@ class Person {
 
 class Student extends Person {
   constructor(name, age, marks) {
-    super(name, age);
+    super(name, age); //Parent class constructor is called
     this.marks = marks;
   }
 
