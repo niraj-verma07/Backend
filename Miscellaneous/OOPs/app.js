@@ -69,3 +69,10 @@ class Student extends Person {
 }
 
 let s1 = new Student("Niraj", 20, 98);
+
+class Teacher extends Person {
+  constructor(name, age, subject) {
+    super(name, age); //Parent class constructor is called
+    this.subject = subject;
+  }
+}
