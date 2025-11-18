@@ -11,7 +11,8 @@ app.listen(port, () => {
 //   console.log("New Request recived");
 //   //Sending response to the user
 //   //   res.send("This is the response"); //Normal text message
-//   //   res.send({ // Object
+//   //   res.send({
+// // Object
 //   //     name: "Niraj",
 //   //     OS: "Windows",
 //   //   });
@@ -36,12 +37,12 @@ app.get("/contact", (req, res) => {
 
 //For post request
 app.post("/", (req, res) => {
-  res.send("You contacted root path");
+  res.send("You contacted root path Post request");
 });
 
-//For all undefined path (e hamesha sare path ke niche hota hai)
+//For all undefined path (isko hamesha sare path ke niche likhna hota hai)
 // app.use((req, res) => {
-//   res.status(404).send("This path does not exist");
+//   res.send("This path does not exist on server");
 // });
 
 //Path parameters
@@ -56,10 +57,10 @@ app.get("/:username/:id", (req, res) => {
   res.send(`${username} with ${id} response`);
 });
 
-// app.get("/search", (req, res) => {
-//   console.log(req.query);
-//   res.send("no results");
-// });
+app.get("/search", (req, res) => {
+  console.log(req.query);
+  res.send("no results");
+});
 
 app.get("/search", (req, res) => {
   let { q } = req.query;
