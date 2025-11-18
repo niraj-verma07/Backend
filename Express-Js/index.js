@@ -57,15 +57,15 @@ app.get("/:username/:id", (req, res) => {
   res.send(`${username} with ${id} response`);
 });
 
-app.get("/search", (req, res) => {
-  console.log(req.query);
-  res.send("no results");
-});
+// app.get("/search", (req, res) => {
+//   console.log(req.query);
+//   res.send("no results");
+// });
 
 app.get("/search", (req, res) => {
   let { q } = req.query;
   if (!q) {
-    res.send("No such query");
+    res.send(`<h1>No search query provided</h1>`);
   }
-  res.send("no results");
+  res.send(`<h1>Search results for ${q}</h1>`);
 });
